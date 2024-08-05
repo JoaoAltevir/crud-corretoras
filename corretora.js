@@ -66,3 +66,11 @@ const apagarCorretora = () => {
     console.log("Registro excluido com sucesso!");
 
 }
+
+module.exports = {
+    criarCorretora,
+    listarCorretoras,
+    atualizarCorretora,
+    apagarCorretora,
+    
+}

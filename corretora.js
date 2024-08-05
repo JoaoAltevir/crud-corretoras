@@ -48,6 +48,5 @@ const atualizarCorretora = () => {
     corretoras[indice] = novo;
 
     console.log("Registro atualizado com sucesso!")
-
-
 }
+

@@ -37,7 +37,7 @@ const atualizarCorretora = () => {
     }
     listarCorretoras();
 
-    const id = prompt("Informe o registro que deseja atualizar: ");
+    const id = parseInt(prompt("Informe o registro que deseja atualizar: "));
 
     const indice = corretoras.findIndex(corretora => corretora.id == id);
 
@@ -50,3 +50,19 @@ const atualizarCorretora = () => {
     console.log("Registro atualizado com sucesso!")
 }
 
+const apagarCorretora = () => {
+    if(corretoras.length == 0){
+        console.log("Nenhuma corretora cadastrada!")    
+        return
+    }
+    listarCorretoras();
+
+    const id = parseInt(prompt("Informe o registro que deseja apagar: "));
+
+    const indice = corretoras.findIndex(corretora => corretora.id == id);
+
+    corretoras.splice(indice, 1);
+
+    console.log("Registro excluido com sucesso!");
+
+}

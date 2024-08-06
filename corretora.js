@@ -22,11 +22,16 @@ const criarCorretora = () => {
 }
 
 const listarCorretoras = () => {
+    if(corretoras.length == 0){
+        console.log("Nenhuma corretora cadastrada!")
+        return false
+    }
     corretoras.forEach(corretora => {
         console.log(`
     Registro: ${corretora.id}
 Nome Corretora : ${corretora.nome}; 
         `)
+        return true
     })
 }
 

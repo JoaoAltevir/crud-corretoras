@@ -1,5 +1,5 @@
 const prompt = require('prompt-sync')();
-const {listarCorretoras} = require('./corretora.js');
+const {listarCorretoras} = require('../corretora.js');
 const corretores = [];
 let ultimoID = 1
 

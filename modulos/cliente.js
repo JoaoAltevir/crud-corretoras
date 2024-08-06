@@ -72,3 +72,11 @@ const destroy = () => {
         return
     }
 }
+
+module.exports = {
+    store,
+    index,
+    show,
+    update,
+    destroy,
+}

@@ -82,3 +82,11 @@ const apagarCorretor = () => {
     corretores.splice(indice, 1);
     
 }
+
+
+module.exports = {
+    criarCorretor,
+    listarCorretores,
+    atualizarCorretores,
+    apagarCorretor,
+}

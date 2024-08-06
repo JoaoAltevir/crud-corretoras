@@ -56,6 +56,7 @@ const update = () => {
         console.log("Dados inválidos!");
         return
     }
+}
 const destroy = () => {
     if(index()){
         const id = parseInt(prompt("Informe o registro que deseja apagar: "));
@@ -70,7 +71,4 @@ const destroy = () => {
         console.log("Indice não é válido!");
         return
     }
-}
-    
-
 }

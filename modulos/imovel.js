@@ -50,7 +50,10 @@ const index = () => {
     DB.forEach(element => {
         console.log(`
         Registro: ${element.id}
-        Nome: ${element.nome}
+        Rua: ${element.rua}
+        Bairro: ${element.bairro}
+        Numero: ${element.numero}
+        Corretora: ${element.idCorretora}
         `)
     })
 }
@@ -98,4 +101,5 @@ module.exports = {
     show,
     update,
     destroy,
+    DB,
 }

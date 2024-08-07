@@ -36,6 +36,8 @@ const criarCorretor = () => {
     }
 }
 
+const show = id => corretores.find(el => el.id == id);
+
 const listarCorretores = () => {
     if(corretores.length == 0 ){
         console.log("Nenhum corretor cadastrado!")
@@ -89,4 +91,5 @@ module.exports = {
     listarCorretores,
     atualizarCorretores,
     apagarCorretor,
+    show,
 }

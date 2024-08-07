@@ -1,95 +1,91 @@
-const prompt = require('prompt-sync')();
-const {listarCorretoras} = require('../corretora.js');
+const prompt = require("prompt-sync")();
+const { listarCorretoras } = require("./corretora.js");
 const corretores = [];
-let ultimoID = 1
+let ultimoID = 1;
 
 const modelo = () => {
-    let nome = prompt("Informe o nome do corretor: ");
-    
-    let idCorretora = 0;
-    if(listarCorretoras()){
-        idCorretora = +prompt("Informe o id da corretora que ele trabalha: ")
-    }
+  let nome = prompt("Informe o nome do corretor: ");
 
-    if(
-        nome == "" &&
-        idCorretora <= 0
-    ){
-        return false
-    }
+  let idCorretora = 0;
+  if (listarCorretoras()) {
+    idCorretora = parseInt(
+      prompt("Informe o id da corretora que ele trabalha: ")
+    );
+  }
 
-    return {
-        nome,
-        idCorretora,
-    }
+  if (nome == "" || idCorretora <= 0) {
+    return false;
+  }
 
-}
+  return {
+    nome,
+    idCorretora,
+  };
+};
 
 const criarCorretor = () => {
-    const corretor = modelo();
-    if(corretor){
-        corretor.id = ultimoID;
-        corretores.push(corretor);
-        console.log("Cadastrado com sucesso!")
-    }else{
-        console.log("Dados inválidos!")
-    }
-}
+  const corretor = modelo();
+  if (corretor) {
+    corretor.id = ultimoID;
+    corretores.push(corretor);
+    console.log("Cadastrado com sucesso!");
+  } else {
+    console.log("Dados inválidos!");
+  }
+};
 
-const show = id => corretores.find(el => el.id == id);
+const show = (id) => corretores.find((el) => el.id == id);
 
 const listarCorretores = () => {
-    if(corretores.length == 0 ){
-        console.log("Nenhum corretor cadastrado!")
-    }else{
-        corretores.forEach(corretor => {
-        console.log(`
+  if (corretores.length == 0) {
+    console.log("Nenhum corretor cadastrado!");
+  } else {
+    corretores.forEach((corretor) => {
+      console.log(`
         Nome Corretor: ${corretor.nome}
         ID Corretora: ${corretor.idCorretora}
-        ID Corretor: ${corretor.id}`)
-        })
-    }
-}
+        ID Corretor: ${corretor.id}`);
+    });
+  }
+};
 
 const atualizarCorretores = () => {
-    if(corretores.length == 0){
-        console.log("Nenhum corretor cadastrado!")
-        return
-    }
+  if (corretores.length == 0) {
+    console.log("Nenhum corretor cadastrado!");
+    return;
+  }
 
-    listarCorretores();
+  listarCorretores();
 
-    const id = parseInt(prompt("Informe o id que deseja atualizar: "));
+  const id = parseInt(prompt("Informe o id que deseja atualizar: "));
 
-    const indice = corretores.findIndex(corretor => corretor.id == id);
+  const indice = corretores.findIndex((corretor) => corretor.id == id);
 
-    const novo = modelo();
+  const novo = modelo();
 
-    novo.id = id;
+  novo.id = id;
 
-    corretores[indice] = novo;
+  corretores[indice] = novo;
 
-    console.log("Registro atualizado com sucesso!")
-}
+  console.log("Registro atualizado com sucesso!");
+};
 const apagarCorretor = () => {
-    if(corretores.length == 0 ){
-        console.log("Nenhum corretor cadastrado!");
-        return
-    }
-    listarCorretores();
+  if (corretores.length == 0) {
+    console.log("Nenhum corretor cadastrado!");
+    return;
+  }
+  listarCorretores();
 
-    const id = parseInt(prompt("Informe o id que deseja apagar: "));
-    const indice = corretores.findIndex(corretor => corretor.id == id);
+  const id = parseInt(prompt("Informe o id que deseja apagar: "));
+  const indice = corretores.findIndex((corretor) => corretor.id == id);
 
-    corretores.splice(indice, 1);
-    
-}
-
+  corretores.splice(indice, 1);
+};
 
 module.exports = {
-    criarCorretor,
-    listarCorretores,
-    atualizarCorretores,
-    apagarCorretor,
-    show,
-}
+  criarCorretor,
+  listarCorretores,
+  atualizarCorretores,
+  apagarCorretor,
+  show,
+};

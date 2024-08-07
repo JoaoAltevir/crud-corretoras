@@ -17,8 +17,8 @@ const model = (id = proxID++) => {
 }
 
 const store = () => {
+    const novo = model();
     if(novo){
-        const novo = model();
         DB.push(novo)
     }
 }

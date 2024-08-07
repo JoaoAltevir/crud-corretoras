@@ -39,6 +39,7 @@ const show = (id) => corretores.find((el) => el.id == id);
 const listarCorretores = () => {
   if (corretores.length == 0) {
     console.log("Nenhum corretor cadastrado!");
+    return false
   } else {
     corretores.forEach((corretor) => {
       console.log(`
@@ -46,6 +47,7 @@ const listarCorretores = () => {
         ID Corretora: ${corretor.idCorretora}
         ID Corretor: ${corretor.id}`);
     });
+    return true
   }
 };
 

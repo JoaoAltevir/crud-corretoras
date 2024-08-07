@@ -34,6 +34,7 @@ const index = () => {
         Nome: ${element.nome}
         `)
     })
+    return true
 }
 
 const show = id => DB.find(el => el.id == id);

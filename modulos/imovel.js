@@ -56,6 +56,7 @@ const index = () => {
         Corretora: ${element.idCorretora}
         `)
     })
+    return true
 }
 
 const show = id => DB.find(el => el.id == id);

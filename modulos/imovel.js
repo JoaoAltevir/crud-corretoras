@@ -34,8 +34,8 @@ const model = (id = proxID++) => {
 }
 
 const store = () => {
+    const novo = model();
     if(novo){
-        const novo = model();
         DB.push(novo)
     }else{
         console.log("Dados inválidos!")
@@ -56,6 +56,7 @@ const index = () => {
         Corretora: ${element.idCorretora}
         `)
     })
+    return true
 }
 
 const show = id => DB.find(el => el.id == id);

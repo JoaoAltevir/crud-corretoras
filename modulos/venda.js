@@ -13,6 +13,7 @@ const model = (id = proxID++) => {
         idCorretor = parseInt(prompt("Informe o id do corretor que realizou a venda: "));
     }
     const corretorAux = corretor.show(idCorretor)
+    console.log(corretorAux)
     let idImovel = 0
     if(imovel.index()){
         idImovel = parseInt(prompt('Informe o id do móvel em que foi realizado a venda: '));
@@ -43,8 +44,8 @@ const model = (id = proxID++) => {
 }
 
 const store = () => {
+    const novo = model();
     if(novo){
-        const novo = model();
         DB.push(novo)
     }else{
         console.log("Dados inválidos!")
